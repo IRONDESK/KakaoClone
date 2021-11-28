@@ -104,11 +104,11 @@ main .today-container > h1 {
     line-height: 66px;
 }
 main .today-container > h1:first-child {
-    background: no-repeat left/65px url(img/ico_date12.gif);
-    padding-left: 70px;
+    background: no-repeat left/75px url(img/ico_date12.gif);
+    padding-left: 85px;
 }
 
-/* Article - info header(wrap) */
+/* card article - info header(wrap) */
 .art-info-wrap {
     display: flex;
     flex-direction: row;
@@ -157,43 +157,64 @@ main .today-container > h1:first-child {
     align-items: center;
 }
 
-/* Section 1 - News */
+
+/* Section 1 - News Card */
 main .section1 {
-    display: flex
+    display: flex;
+    margin: 0 -18px;
 }
 
 main .section1 .main-side {
     width: 50%;
-    margin-right: 20px;
+    padding: 0 18px;
 }
 main .section1 .sub-side {
-    width: 50%;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    gap: 20px;
+    position: relative;
+    min-width: 666px;
+    flex: 1;
+    padding: 0 18px;
     box-sizing: border-box;
     
 }
 main .art {
+    background-color: #fff;
     padding: 25px 24px 0;
-    border-radius: 10px;
+    border-radius: 14px;
     box-sizing: border-box;
     overflow: hidden;
     -webkit-box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.1); 
     box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.1);
-    transition: all .3s;
+    transition: all .2s ease-in-out;
 }
 main .art:hover {
     transform: translateY(-8px);
     -webkit-box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.3); 
     box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.3);
 }
+
+main .main-side .art {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    overflow: hidden;
+}
+main .sub-side .art {
+    overflow: hidden;
+    width: 297px;
+    margin-top: 36px;
+}
+main .sub-side .art:nth-child(-n+2) {
+    /* 최상단 2개 카드는 상단 마진 0 */
+    margin-top: 0;
+}
+
 main .art .news-link {
     display: block;
     margin: 0 -24px;
 }
 
 
+/* Card 콘텐츠 내용 */
 .art h2 {
     margin-top: 13px;
     letter-spacing: -1px;
@@ -205,5 +226,28 @@ main .art .news-link {
     font-weight: bold;
     font-size: 32px;
     line-height: 46px;
-
+}
+.art p {
+    
+    margin-top: 24px;
+    padding-left: 24px;
+    font-size: 15px;
+    color: #666;
+    line-height: 19px;
+    font-weight: 300;
+}
+.art p .text-tag {
+    display: inline-block;
+    margin-right: 3px;
+    vertical-align: top;
+}
+.img-wrap {
+    display: block;
+    margin-top: 20px;
+    height: calc(100% - 156px);
+}
+.img-wrap img {
+    display: block;
+    height: 100%;
+    min-height: 100%;
 }
