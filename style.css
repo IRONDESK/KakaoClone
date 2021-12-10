@@ -199,7 +199,6 @@ main .item {
     overflow: hidden;
     transition: all .2s ease-in-out;
     position: relative;
-    overflow: hidden;
 }
 main .item:hover {
     transform: translateY(-8px);
@@ -298,4 +297,43 @@ main .item .news-link {
     display: block;
     height: 100%;
     min-height: 100%;
+}
+
+/* section 2 */
+
+.section2 article {
+    position: relative;
+    text-align: center;
+    margin: 36px 0;
+    padding: 54px 66px 0;
+    height: 540px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 14px;
+    box-sizing: border-box;
+    box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
+}
+.section2 article strong {
+    display: block;
+    font-size: 46px;
+    text-align: center;
+    font-weight: 600;
+}
+.section2 article a {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    height: 32px;
+    margin-top: 36px;
+    font-size: 14px;
+    border-radius: 42px;
+    line-height: 32px;
+    padding: 5px 20px;
+
+}
+.section2 article img {
+    margin: 50px 132px 0;
+    display: block;
+    width: 900px;
 }
