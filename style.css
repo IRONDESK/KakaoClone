@@ -1,6 +1,12 @@
 
 body, div, p, ul, li, a, span, button, input { font-family: 'Pretendard' }
 a { text-decoration:none; color:inherit;}
+.material-icons {
+    display: inline;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+}
 .sr-only {
     position: absolute;
     left: -9999px;
@@ -271,9 +277,17 @@ article .item-black-btn {
     margin-top: 36px;
     font-size: 14px;
     border-radius: 42px;
+    padding: 5px 36px 5px 20px;
     line-height: 32px;
-    padding: 5px 20px;
 }
+article .item-black-btn::after {
+    content: 'arrow_forward';
+    position: absolute;
+    font-family: 'Material Icons';
+    font-size: 16px;
+    padding-left: 2px;
+}
+
 
 /* small은 임시 */
 .item.item-mid h2, .item.item-small h2 {
@@ -386,11 +400,13 @@ article .item-black-btn {
 /* etc section */
 .etc {
     width: 100%;
+    overflow: hidden;
+    margin: 42px 0;
 }
 .etc .item-gray-btn {
     width: 260px;
     height: 60px;
-    margin: 0 auto;
+    margin: 20px auto;
     display: block;
     cursor: pointer;
     border: 0;
@@ -410,14 +426,18 @@ article .item-black-btn {
     background-color: #000;
     border-radius: 100%;
     float: right;
+    position: relative;
     width: 50px;
     height: 50px;
     color: transparent;
 }
 .etc .top-btn::after {
-    content: '▲';
+    content: 'arrow_upward';
+    font-family: 'Material Icons';
     color: #fff;
+    font-size: 30px;
     position: relative;
-    right: 10px;
-    top: calc(50% - 10px);
+    left: 10.5px;
+    top: -5px;
 }
+
