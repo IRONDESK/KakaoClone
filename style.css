@@ -441,3 +441,45 @@ article .item-black-btn::after {
     top: -5px;
 }
 
+/* footer */
+footer {
+    border-top: 1px solid #ebebeb;
+    padding-top: 50px;
+}
+footer section {
+    width: 1296px;
+    margin: 0 auto;
+}
+footer .sitemap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer section ul {
+    display: inline-block;
+    flex: 1; /* 넓이 같게 만들기 */
+}
+footer section li {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #888;
+}
+footer section li:hover {
+    color: #000;
+}
+footer section .service-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000;
+}
+footer section .service-title:hover::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #FFCD00;
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    margin-top: 4px;
+    margin-left: -13px;
+}
