@@ -4,8 +4,6 @@ a { text-decoration:none; color:inherit;}
 .material-icons {
     display: inline;
     font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
 }
 .sr-only {
     position: absolute;
@@ -482,4 +480,128 @@ footer section .service-title:hover::before {
     border-radius: 100%;
     margin-top: 4px;
     margin-left: -13px;
+}
+footer .footer-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 110px;
+    margin-bottom: 60px;
+}
+
+/* footer-line- DropMenu(공통) */
+footer .footerDropList {
+    display: none;
+    padding: 8px 20px;
+    position: absolute;
+    background-color: #EEEEEE;
+    border-radius: 15px;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+footer .footerDropList.on {
+    display: block;
+}
+
+/* footer-line-Left */
+footer .footer-line-Left .UseInfoMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+}
+footer .footer-line-Left .top-title{
+    cursor: pointer;
+    position: relative;
+    display: inline;
+    vertical-align: middle;
+    line-height: 16px;
+    font-size: 13px;
+    line-height: 14px;
+}
+footer .footer-line-Left p {
+    display: block;
+    font-size: 15px;
+    color: #888;
+}
+footer .footer-line-Left .footerDropList {
+    width: 140px;
+    bottom: 25px;
+}
+.footer-line-Left .top-title:nth-child(1):hover:after,
+.footer-line-Left .top-title:nth-child(2):hover:after,
+.footer-line-Left .top-title:nth-child(3):hover:after,
+.footer-line-Left .top-title:nth-child(7):hover:after,
+.footer-line-Left .top-title:nth-child(1).on,
+.footer-line-Left .top-title:nth-child(2).on,
+.footer-line-Left .top-title:nth-child(3).on,
+.footer-line-Left .top-title:nth-child(7).on,
+.footer-line-Left .top-title:nth-child(1).on:after,
+.footer-line-Left .top-title:nth-child(2).on:after,
+.footer-line-Left .top-title:nth-child(3).on:after,
+.footer-line-Left .top-title:nth-child(7).on:after {
+    color: #000;
+    content: 'expand_less';
+}
+.footer-line-Left .top-title:nth-child(1):after,
+.footer-line-Left .top-title:nth-child(2):after,
+.footer-line-Left .top-title:nth-child(3):after,
+.footer-line-Left .top-title:nth-child(7):after {
+    display: inline-block;
+    vertical-align: middle;
+    content: 'expand_more';
+    font-family: 'Material Icons';
+    color: #888;
+    font-weight: normal;
+    line-height: 14px;
+}
+.footer-line-Left .top-title:nth-child(2),
+.footer-line-Left .top-title:nth-child(3) {
+    color: #000;
+    font-weight: bold;
+}
+
+
+/* footer-line-Right */
+footer .footer-line-Right {
+    width: 200px;
+    position: relative;
+}
+footer .footer-line-Right button {
+    cursor: pointer;
+    width: 200px;
+    background-color: #EEEEEE;
+    border-radius: 24px;
+    padding: 14px 22px 11px;
+    font-size: 14px;
+    line-height: 25px;
+    border: none;
+    text-align: left;
+    overflow: hidden;
+}
+footer .footer-line-Right button span {
+    float: right;
+    transition: all .5s;
+}
+footer .footer-line-Right button span.on {
+    transform: rotate(45deg);
+}
+footer .footerDropList {
+    width: 100%;
+    padding: 8px 20px;
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+    background-color: #EEEEEE;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+footer .footerDropList li {
+    margin: 17px 0;
+    font-size: 12px;
+}
+footer .footer-line-Right .footerDropList {
+    width: 100%;
+    bottom: 60px;
 }
