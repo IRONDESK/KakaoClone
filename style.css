@@ -14,6 +14,25 @@ a { text-decoration:none; color:inherit;}
     overflow: hidden;
 }
 
+/* dark mode */
+body.dark {
+    background-color: #222;
+}
+nav.dark,
+.today-container.dark,
+.sitemap.dark .service-title,
+.sitemap.dark li:hover {
+    color: #fff;
+}
+.navLeft.dark img,
+.navRight.dark img,
+.UseInfoMenu.dark {
+    filter: invert(100%)
+}
+.navRight.dark > ul > li > button:hover {
+    background-color: #666;
+}
+
 /* header */
 header {
     position: sticky;

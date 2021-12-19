@@ -39,8 +39,37 @@ function scrollEvent () {
     })
 }
 
+function darkMode () {
+    const darkBtn = document.querySelector("#dark-btn");
+    const body = document.querySelector("body");
+
+
+    darkBtn.addEventListener("click", function() {
+        if (!body.classList.contains("dark")) {
+            body.classList.add("dark");
+            document.querySelector("body").classList.add("dark");
+            document.querySelector("nav").classList.add("dark");
+            document.querySelector(".today-container").classList.add("dark");
+            document.querySelector(".sitemap").classList.add("dark");
+            document.querySelector(".navLeft").classList.add("dark");
+            document.querySelector(".navRight").classList.add("dark");
+            document.querySelector(".UseInfoMenu").classList.add("dark");
+        } else {
+            body.classList.remove("dark");
+            document.querySelector("body").classList.remove("dark");
+            document.querySelector("nav").classList.remove("dark");
+            document.querySelector(".today-container").classList.remove("dark");
+            document.querySelector(".sitemap").classList.remove("dark");
+            document.querySelector(".navLeft").classList.remove("dark");
+            document.querySelector(".navRight").classList.remove("dark");
+            document.querySelector(".UseInfoMenu").classList.remove("dark");
+        }
+    })
+}
+
 
 
 getDate();
 addClassOn();
 scrollEvent();
+darkMode();
