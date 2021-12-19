@@ -102,10 +102,7 @@ main {
 
 /* Today Header */
 main .today-container {
-    position: sticky;
     margin: 96px 0;
-}
-main .today-container > h1 {
     font-size: 46px;
     font-weight: bold;
     line-height: 66px;
@@ -114,6 +111,29 @@ main .today-container > h1:first-child {
     background: no-repeat left/75px url(img/ico_date12.gif);
     padding-left: 85px;
 }
+.today-sticky {display: none;}
+.today-sticky.on {
+    top: 0;
+    display: block;
+    position: sticky;
+    background-color: #fff;
+    padding: 15px 0;
+    z-index: 5;
+    height: 30px;
+    border-bottom: 1px solid #eee;
+}
+.today-sticky h1 {
+    position: relative;
+    display: block;
+    width: 1296px;
+    left: 50%;
+    font-size: 20px;
+    line-height: 34px;
+    font-weight: 700;
+    transform: translateX(-50%);
+}
+
+
 
 /* card article - info header(wrap) */
 .item-info-wrap {
@@ -139,6 +159,12 @@ main .today-container > h1:first-child {
 }
 .icon.promise {
     background: no-repeat left/36px url(img/ico_responsible.png);
+}
+.icon.customer {
+    background: no-repeat left/36px url(img/ico_customer.png);
+}
+.icon.privacy {
+    background: no-repeat left/36px url(img/ico_privacy.png);
 }
 .balloons {
     position: relative;
@@ -259,6 +285,9 @@ main .item .news-link {
     display: block;
     margin: 0 -24px;
 }
+main .item .news-link .stock-price {
+    font-size: 33px;
+}
 .item.item-lrg h2 {
     max-height: 92px;
     height: 92px;
@@ -296,9 +325,6 @@ article .item-black-btn::after {
     line-height: 32px;
     /* 두 줄 말줄임 */
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
 }
 .item p {
     margin-top: 24px;
@@ -313,15 +339,23 @@ article .item-black-btn::after {
     margin-right: 3px;
     vertical-align: top;
 }
-.img-wrap {
+
+
+.sub-side .img-wrap {
     display: block;
-    margin-top: 20px;
-    height: calc(100% - 156px);
+    margin: 21px -3px -3px;
 }
-.img-wrap img {
+.sub-side .img-wrap img {
+    width: auto;
+    height: 250px;
+}
+.main-side .img-wrap {
     display: block;
-    height: 100%;
-    min-height: 100%;
+    margin: 21px -3px -3px;
+}
+.main-side .img-wrap img {
+    width: 100%;
+    min-height: 500px;
 }
 
 /* section 2 */

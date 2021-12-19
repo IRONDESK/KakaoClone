@@ -23,7 +23,20 @@ function addClassOn () {
     })
 }
 
+function scrollEvent () {
+    document.addEventListener("scroll", function() {
+        const currentScroll = document.documentElement.scrollTop;
+        const todayCont = document.querySelector(".today-sticky");
+        if (currentScroll > 210) {
+            todayCont.classList.add("on");
+        } else {
+            todayCont.classList.remove("on");
+        }
+    })
+}
+
 
 
 getDate();
 addClassOn();
+scrollEvent();
