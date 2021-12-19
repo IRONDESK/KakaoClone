@@ -14,6 +14,7 @@ a { text-decoration:none; color:inherit;}
     overflow: hidden;
 }
 
+/* header */
 header {
     position: sticky;
 }
@@ -107,30 +108,54 @@ main .today-container {
     font-weight: bold;
     line-height: 66px;
 }
-main .today-container > h1:first-child {
-    background: no-repeat left/75px url(img/ico_date12.gif);
-    padding-left: 85px;
+main .today-container .today-icon-text {
+    display: inline-block;
+    text-align: center;
+    padding: 19px 6px 0;
+    margin-right: 10px;
+    font-size: 34px;
+    width: 54px;
+    background: url(img/day.png);
+    background-size: 75px;
+    background-position: -5px;
+    background-repeat: no-repeat;
+    color: #000;
 }
+
+/* Today Header Sticky */
 .today-sticky {display: none;}
 .today-sticky.on {
     top: 0;
     display: block;
     position: sticky;
     background-color: #fff;
-    padding: 15px 0;
+    padding: 17px 0;
     z-index: 5;
-    height: 30px;
+    height: 40px;
     border-bottom: 1px solid #eee;
 }
 .today-sticky h1 {
     position: relative;
-    display: block;
+    display: inline-block;
     width: 1296px;
     left: 50%;
     font-size: 20px;
     line-height: 34px;
     font-weight: 700;
     transform: translateX(-50%);
+
+    background: url(img/day.png);
+    background-size: 37px;
+    background-position: -3px -3px;
+    background-repeat: no-repeat;
+}
+.today-sticky .today-icon-text {
+    display: inline-block;
+    width: 27px;
+    text-align: center;
+    padding: 3px 3px 0;
+    font-size: 17px;
+    color: #000;
 }
 
 
