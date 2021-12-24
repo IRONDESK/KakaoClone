@@ -24,6 +24,7 @@ body.dark {
     background-color: #222;
 }
 nav.dark,
+nav.dark .navCenter li:hover,
 .today-container.dark,
 .sitemap.dark .service-title,
 .sitemap.dark li:hover {
@@ -688,3 +689,4 @@ footer .footer-line-Right .footerDropList {
     width: 100%;
     bottom: 60px;
 }
+
