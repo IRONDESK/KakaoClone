@@ -168,7 +168,6 @@ main .today-container .today-icon-text {
     line-height: 34px;
     font-weight: 700;
     transform: translateX(-50%);
-
     background: url(img/day.png);
     background-size: 37px;
     background-position: -3px -3px;
@@ -253,8 +252,6 @@ main .main-side {
     margin: 0 18px;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
-
 }
 main .sub-side {
     width: 630px;
@@ -263,22 +260,20 @@ main .sub-side {
     margin: 0 18px;
     display: flex;
     flex-wrap: wrap;
-    flex: 1;
     align-content: space-between;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 
 main .item {
+    position: relative;
     background-color: #fff;
     padding: 25px 24px 0;
     border-radius: 14px;
-    box-sizing: border-box;
     box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
     overflow: hidden;
+    box-sizing: border-box;
     transition: all .2s ease-in-out;
-    position: relative;
 }
 main .item:hover {
     transform: translateY(-8px);
@@ -599,8 +594,6 @@ footer .footer-line-Left .top-title{
     cursor: pointer;
     position: relative;
     display: inline;
-    vertical-align: middle;
-    line-height: 16px;
     font-size: 13px;
     line-height: 14px;
 }
@@ -690,3 +683,45 @@ footer .footer-line-Right .footerDropList {
     bottom: 60px;
 }
 
+/* 반응형 */
+
+@media screen and (max-width: 1350px) {
+    nav {
+        width: calc(100% - 80px);
+    }
+    main {
+        width: calc(100% - 80px);
+    }
+    main .main-side {
+        position: relative;
+        margin: 0 18px;
+    }
+    main .sub-side {
+        width: 300px;
+        position: relative;
+        height: 2400px;
+    }
+    main .sub-side .item:nth-child(-n+2) {
+        margin-top: 36px;
+    }
+}
+@media screen and (max-width: 1350px) {
+    nav {
+        width: calc(100% - 80px);
+    }
+    main {
+        width: calc(100% - 80px);
+    }
+    main .main-side {
+        position: relative;
+        margin: 0 18px;
+    }
+    main .sub-side {
+        width: 300px;
+        position: relative;
+        height: 2400px;
+    }
+    main .sub-side .item:nth-child(-n+2) {
+        margin-top: 36px;
+    }
+}
