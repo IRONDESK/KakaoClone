@@ -27,7 +27,8 @@ nav.dark,
 nav.dark .navCenter li:hover,
 .today-container.dark,
 .sitemap.dark .service-title,
-.sitemap.dark li:hover {
+.sitemap.dark li:hover,
+.today-sticky.dark h1 {
     color: #fff;
 }
 .navLeft.dark img,
@@ -37,6 +38,10 @@ nav.dark .navCenter li:hover,
 }
 .navRight.dark > ul > li > button:hover {
     background-color: #666;
+}
+.today-sticky.dark.on {
+    background-color: #222;
+    border-bottom: 1px solid #444;
 }
 
 /* header */
