@@ -513,6 +513,9 @@ article .item-black-btn::after {
     height: 50px;
     color: transparent;
 }
+.etc .top-btn:hover {
+    opacity: 0.7;
+}
 .etc .top-btn::after {
     content: 'arrow_upward';
     font-family: 'Material Icons';
@@ -565,16 +568,15 @@ footer section .service-title:hover::before {
     margin-top: 4px;
     margin-left: -13px;
 }
-footer .footer-line {
+
+/* footer-line */
+.footer-line {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 110px;
-    margin-bottom: 60px;
 }
-
-/* footer-line- DropMenu(공통) */
-footer .footerDropList {
+.footerDropList {
     display: none;
     padding: 8px 20px;
     position: absolute;
@@ -583,29 +585,24 @@ footer .footerDropList {
     box-sizing: border-box;
     font-weight: normal;
 }
-footer .footerDropList.on {
+.footerDropList.on {
     display: block;
 }
 
 /* footer-line-Left */
-footer .footer-line-Left .UseInfoMenu {
+.footer-line-Left .UseInfoMenu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 900px;
     transition: all .2s;
 }
-footer .footer-line-Left .top-title{
+.footer-line-Left .top-title{
     cursor: pointer;
     position: relative;
     display: inline;
     font-size: 13px;
     line-height: 14px;
-}
-footer .footer-line-Left p {
-    display: block;
-    font-size: 15px;
-    color: #888;
 }
 footer .footer-line-Left .footerDropList {
     width: 140px;
@@ -646,11 +643,11 @@ footer .footer-line-Left .footerDropList {
 
 
 /* footer-line-Right */
-footer .footer-line-Right {
+.footer-line-Right {
     width: 200px;
     position: relative;
 }
-footer .footer-line-Right button {
+.footer-line-Right button {
     cursor: pointer;
     width: 200px;
     background-color: #EEEEEE;
@@ -662,14 +659,14 @@ footer .footer-line-Right button {
     text-align: left;
     overflow: hidden;
 }
-footer .footer-line-Right button span {
+.footer-line-Right button span {
     float: right;
     transition: all .5s;
 }
-footer .footer-line-Right button span.on {
+.footer-line-Right button span.on {
     transform: rotate(45deg);
 }
-footer .footerDropList {
+.footerDropList {
     width: 100%;
     padding: 8px 20px;
     position: absolute;
@@ -679,13 +676,22 @@ footer .footerDropList {
     border-radius: 15px;
     box-sizing: border-box;
 }
-footer .footerDropList li {
+.footerDropList li {
     margin: 17px 0;
     font-size: 12px;
 }
 footer .footer-line-Right .footerDropList {
     width: 100%;
     bottom: 60px;
+}
+
+.footer-bottom {
+    width: 1296px;
+    margin: 0 auto;
+    display: block;
+    font-size: 15px;
+    color: #888;
+    margin-bottom: 60px;
 }
 
 /* 반응형 */
@@ -711,21 +717,25 @@ footer .footer-line-Right .footerDropList {
     .section2 article img {
         width: calc(100% - 150px);
     }
-    footer .footer-line-Left .UseInfoMenu {
+    .footer-line-Left .UseInfoMenu {
         width: 600px;
-        flex-wrap:wrap;
-        justify-content:flex-start;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
-    footer .footer-line-Left .top-title {
+    .footer-line-Left .top-title {
         padding-right: 16px;
     }
-    footer .footer-line-Right .footerDropList {
+    .footer-line-Right .footerDropList {
         width: 100%;
         bottom: 100px;
     }
-
-
+    .footer-bottom {
+        width: calc(100% - 80px);
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
 }
+
 @media screen and (max-width: 1065px) {
     main .main-side {
         width: 70%;
@@ -743,4 +753,101 @@ footer .footer-line-Right .footerDropList {
     main .sub-side .item:nth-child(1) {
         margin-top: 0px;
     }
+}
+
+@media screen and (max-width: 860px) {
+/* today-container */
+main .today-container {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 46px;
+}
+main .today-container .today-icon-text {
+    display: inline-block;
+    text-align: center;
+    padding: 20px 6px 3px 6px;
+    margin-right: 10px;
+    font-size: 28px;
+    width: 34px;
+    height: 40px;
+    background: url(img/day.png);
+    background-size: 55px;
+    background-position: -5px bottom;
+    background-repeat: no-repeat;
+    color: #000;
+}
+
+
+/* footer */
+
+footer section {
+    padding: 0 17px;
+}
+footer .sitemap {
+    flex-direction: column;
+}
+
+.sitemap .service-title {
+    position: relative;
+    border-top: 1px solid #e6e6e6;
+    padding: 0;
+    font-size: 16px;
+    margin: 0;
+}
+.sitemap .service-title:last-child {
+    border-bottom: 1px solid #e6e6e6;
+}
+.sitemap .service-title a {
+    display: block;
+    padding: 18px 3px;
+}
+.sitemap .service-sub,
+.service-blank {
+    display: none;
+}
+.sitemap .service-sub {
+    padding-left: 14px;
+    font-size: 15px;
+}
+.sitemap .service-sub:nth-child(2) {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 20px;
+}
+
+footer section .service-title:hover::before {
+    display: none;
+}
+footer section .service-title::after {
+    content: 'expand_more';
+    font-family: 'Material Icons';
+    color: #888;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 22px;
+    height: 22px;
+}
+
+
+.footer-line-Left .UseInfoMenu {
+    width: 100%;
+    justify-content: space-between;
+}
+.footer-line-Left .UseInfoMenu .top-title {
+    width: 40%;
+}
+.footer-line {
+    display: flex;
+    flex-direction: column;
+}
+.footer-line-Right {
+    margin: 15px 0;
+    width: 100%;
+}
+.footer-line-Right button {
+    width: 100%;
+}
+
 }
