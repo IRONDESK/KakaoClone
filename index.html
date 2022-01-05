@@ -19,11 +19,38 @@
                 <img src="img/kakao_logo.svg" alt="카카오">
             </div>
             <div class="navCenter">
-                <ul>
-                    <li><a href="#">카카오</a></li>
-                    <li><a href="#">뉴스</a></li>
-                    <li><a href="#">기술과 서비스</a></li>
-                    <li><a href="#">약속과 책임</a></li>
+                <ul class="navCenter-list">
+                    <li>
+                        <label for="nav-kakao">카카오</label>
+                        <input type="radio" name="nav-center" id="nav-kakao">
+                        <article class="nav-list">
+                            <a href="#">카카오 문화</a>
+                            <a href="#">공동체</a>
+                            <a href="#">히스토리</a>
+                        </article>
+                    </li>
+                    <li>
+                        <label><a href="#">뉴스</a><label>
+                    </li>
+                    <li>
+                        <label for="nav-techservice">기술과 서비스</label>
+                        <input type="radio" name="nav-center" id="nav-techservice">
+                        <article class="nav-list">
+                            <a href="#">기술</a>
+                            <a href="#">서비스</a>
+                        </article>
+                    </li>
+
+                    <li>
+                        <label for="nav-promise">약속과 책임</label>
+                        <input type="radio" name="nav-center" id="nav-promise">
+                        <article class="nav-list">
+                            <a href="#">ESG</a>
+                            <a href="#">소셜임팩트</a>
+                            <a href="#">디지털권리</a>
+                            <a href="#">AI윤리</a>
+                        </article>
+                    </li>
                 </ul>
             </div>
             <div class="navRight">
@@ -92,7 +119,7 @@
                 </ul>
             </article>
             <article class="m-menu-bot">
-                <button type="button">
+                <button type="button" class="dark-btn">
                     <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/dark_mode/v4/24px.svg" alt="다크모드">
                 </button>
                 <button type="button">
@@ -118,10 +145,11 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>Lorem ipsum dolor sit, adipisicing elit.</h2>
+                        <h2>기업 및 학교 동아리 협업 서비스 출시</h2>
                         <p>
-                            <span class="text-tag">#카카오톡지갑</span>
-                            <span class="text-tag">#카카오톡인증서</span>
+                            <span class="text-tag">#기업문화</span>
+                            <span class="text-tag">#교육혁명</span>
+                            <span class="text-tag">#4차산업혁명</span>
                         </p>
                         <span class="img-wrap"><img src="news/news-img-1.jpg" alt="보도자료 이미지"></span>
                     </a>
@@ -137,8 +165,12 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>Lorem ipsum dolor sit amet Lorem, ipsum.</h2>
-                        <p>#디지털시대 #스포테인먼트</p>
+                        <h2>스포츠 엔터테인먼트 SNS 앱 다운로드 100만 회 돌파</h2>
+                        <p>
+                            <span class="text-tag">#스포테인먼트</span>
+                            <span class="text-tag">#SNS</span>
+                            <span class="text-tag">#스포츠문화</span>
+                        </p>
                         <span class="img-wrap"><img src="news/news-img-2.jpg" alt="보도자료 이미지"></span>
                     </a>
                 </div>
@@ -162,8 +194,12 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>Lorem ipsum dolor sit amet.</h2>
-                        <p>#과학기술 #ICT</p>
+                        <h2>온라인 화상회의 서비스 사용, 국민 전체의 57% 돌파</h2>
+                        <p>
+                            <span class="text-tag">#화상회의</span>
+                            <span class="text-tag">#ICT</span>
+                            <span class="text-tag">#디지털협업</span>
+                        </p>
                         <span class="img-wrap"><img src="news/news-img-3.jpg" alt="보도자료 이미지"></span>
                     </a>
                 </div>
@@ -176,9 +212,9 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>consectetur adipisicing elit.</h2>
+                        <h2>홍길동 대표, 경제 전문 인터넷 방송 출연</h2>
                         <p>
-                            <span class="text-tag">#페이먼트</span>
+                            <span class="text-tag">#일자리창출</span>
                             <span class="text-tag">#디지털카드</span>
                         </p>
                         <span class="img-wrap"><img src="news/news-img-4.jpg" alt="보도자료 이미지"></span>
@@ -193,8 +229,12 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
-                        <p>태그</p>
+                        <h2>MZ세대가 말하는 그들만의 서비스 선택 기준은?</h2>
+                        <p>
+                            <span class="text-tag">#MZ세대</span>
+                            <span class="text-tag">#트렌드</span>
+                            <span class="text-tag">#디지털소비</span>
+                        </p>
                         <span class="img-wrap"><img src="news/news-img-5.jpg" alt="보도자료 이미지"></span>
                     </a>
                 </div>
@@ -231,7 +271,7 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>Lorem ipsum dolor sit amet Lorem, ipsum.</h2>
+                        <h2>카카오페이, 최우수고객만족 전자결제시스템 선정</h2>
                         <p>#비대면결제 #페이먼트 #금융혁신</p>
                         <span class="img-wrap">
                             <img src="news/news-img-6.jpg" alt="보도자료 이미지">
@@ -248,7 +288,7 @@
                         </div>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>dolor sit amet Lorem ipsum dolor sit.</h2>
+                        <h2>세상과 연결하는 신뢰의 서비스</h2>
                         <p>#고객과의약속</p>
                     </a>
 
@@ -263,8 +303,12 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>Lorem ipsum dolor sit amet Lorem, ipsum.</h2>
-                        <p>#디지털혁명 #업무협업</p>
+                        <h2>IT 기업인이 말하는 개발적 사고와 인문학적 사고</h2>
+                        <p>
+                            <span class="text-tag">#융복합인재</span>
+                            <span class="text-tag">#개발자</span>
+                            <span class="text-tag">#기획자</span>
+                        </p>
                         <span class="img-wrap">
                             <img src="news/news-img-7.jpg" alt="보도자료 이미지">
                         </span>
@@ -281,8 +325,12 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>Lorem ipsum dolor sit amet Lorem, ipsum.</h2>
-                        <p>#골목시장 #지역경제</p>
+                        <h2>소상공인 67%, "전자결제시스템 익숙해져"</h2>
+                        <p>
+                            <span class="text-tag">#골목시장</span>
+                            <span class="text-tag">#지역경제</span>
+                            <span class="text-tag">#소상공인</span>
+                        </p>
                         <span class="img-wrap">
                             <img src="news/news-img-8.jpg" alt="보도자료 이미지">
                         </span>
@@ -300,8 +348,12 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>Lorem ipsum dolor sit amet Lorem, ipsum.</h2>
-                        <p>#올림픽 #스포츠중계</p>
+                        <h2>스포츠 중계 시청 인구, 온라인이 TV를 2배 앞질러</h2>
+                        <p>
+                            <span class="text-tag">#스포츠중계</span>
+                            <span class="text-tag">#스트리밍</span>
+                            <span class="text-tag">#시청권</span>
+                        </p>
                         <span class="img-wrap">
                             <img src="news/news-img-9.jpg" alt="보도자료 이미지">
                         </span>
@@ -318,7 +370,7 @@
                         </div>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>dolor sit amet Lorem ipsum dolor sit.</h2>
+                        <h2>튼튼한 보안으로 만드는 고객과의 신뢰</h2>
                         <p>#개인정보 #자율권</p>
                     </a>
 
@@ -334,10 +386,11 @@
                         <input type="checkbox" class="icon-share"></input>
                     </div>
                     <a href="#" class="news-link">
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                        <h2>혁신 기업의 문화란 무엇인가</h2>
                         <p>
-                            <span class="text-tag">#카카오톡지갑</span>
-                            <span class="text-tag">#카카오톡인증서</span>
+                            <span class="text-tag">#기업문화</span>
+                            <span class="text-tag">#혁신산업</span>
+                            <span class="text-tag">#복지</span>
                         </p>
                         <span class="img-wrap"><img src="news/news-img-1.jpg" alt="#"></span>
                     </a>

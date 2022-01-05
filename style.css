@@ -20,7 +20,8 @@ a { text-decoration:none; color:inherit;}
 }
 
 /* dark mode */
-body.dark {
+body {transition: all .3s;}
+body.dark, .mobile-menu.dark {
     background-color: #222;
 }
 nav.dark,
@@ -28,12 +29,15 @@ nav.dark .navCenter li:hover,
 .today-container.dark,
 .sitemap.dark .service-title,
 .sitemap.dark li:hover,
-.today-sticky.dark h1 {
+.today-sticky.dark h1,
+.mobile-menu.dark .title {
     color: #fff;
 }
 .navLeft.dark img,
 .navRight.dark img,
-.UseInfoMenu.dark {
+.UseInfoMenu.dark,
+.mobile-menu.dark .m-menu-top,
+.mobile-menu.dark .m-menu-bot {
     filter: invert(100%)
 }
 .navRight.dark > ul > li > button:hover {
@@ -57,7 +61,6 @@ nav {
     transform: translateX(-50%);
     width: 1296px;
     height: 72px;
-    overflow: hidden;
 }
 /* Nav Left */
 .navLeft {
@@ -72,25 +75,48 @@ nav {
 
 /* Nav Center */
 .navCenter {
-    text-align: center;
-    line-height: 72px;
+    width: 60%;
+    display: flex;
+    align-items: center;
 }
-.navCenter > ul {
-    cursor: pointer;
-    font-weight: bold;
+.navCenter-list {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
 }
-.navCenter > ul:hover {
+.navCenter-list:hover {
     color: #888;
 }
-.navCenter > ul > li {
-    display: inline-block;
-    padding: 0 28px;
-}
-.navCenter > ul > li:hover {
+.navCenter-list li:hover {
     color: #000;
 }
-.navCenter> ul > li > a {
-    height: 72px;
+.navCenter-list input {
+    display: none;
+}
+.navCenter-list label {
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+}
+.navCenter-list .nav-list{
+    display: none;
+}
+.nav-list a:hover{
+    font-weight: 700;
+    color: #fff;
+}
+.navCenter-list input:checked + .nav-list{
+    display: flex;
+    gap: 21px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -15px;
+    border-radius: 30px;
+    background-color: #000;
+    font-size: 16px;
+    color: #eee;
+    padding: 16px 23px;
 }
 
 /* Nav Right */
@@ -98,7 +124,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 180px;
     text-align: right;
 }
 
@@ -344,6 +369,7 @@ main .item.item-small {
 }
 main .item .news-link {
     display: block;
+    word-break: keep-all;
     margin: 0 -24px;
 }
 main .item .news-link .stock-price {
@@ -401,7 +427,15 @@ article .item-black-btn::after {
     vertical-align: top;
 }
 
-
+.main-side .img-wrap {
+    display: block;
+    margin: 21px -3px -3px;
+}
+.main-side .img-wrap img {
+    max-width: 100%;
+    min-height: 500px;
+    object-fit: cover;
+}
 .sub-side .img-wrap {
     display: block;
     margin: 21px -3px -3px;
@@ -409,14 +443,6 @@ article .item-black-btn::after {
 .sub-side .img-wrap img {
     width: auto;
     height: 250px;
-}
-.main-side .img-wrap {
-    display: block;
-    margin: 21px -3px -3px;
-}
-.main-side .img-wrap img {
-    width: 100%;
-    min-height: 500px;
 }
 
 /* section 2 */
@@ -430,6 +456,7 @@ article .item-black-btn::after {
     text-align: center;
     margin: 36px 0;
     padding: 54px 66px 0;
+    width: 100%;
     height: 540px;
     overflow: hidden;
     background-color: #fff;
@@ -624,10 +651,7 @@ footer .footer-line-Left .footerDropList {
     width: 140px;
     bottom: 25px;
 }
-.footer-line-Left .top-title:nth-child(1):hover:after,
-.footer-line-Left .top-title:nth-child(2):hover:after,
-.footer-line-Left .top-title:nth-child(3):hover:after,
-.footer-line-Left .top-title:nth-child(7):hover:after,
+
 .footer-line-Left .top-title:nth-child(1).on,
 .footer-line-Left .top-title:nth-child(2).on,
 .footer-line-Left .top-title:nth-child(3).on,
@@ -637,7 +661,7 @@ footer .footer-line-Left .footerDropList {
 .footer-line-Left .top-title:nth-child(3).on:after,
 .footer-line-Left .top-title:nth-child(7).on:after {
     color: #000;
-    content: 'expand_less';
+    transform: rotate(0);
 }
 .footer-line-Left .top-title:nth-child(1):after,
 .footer-line-Left .top-title:nth-child(2):after,
@@ -645,7 +669,8 @@ footer .footer-line-Left .footerDropList {
 .footer-line-Left .top-title:nth-child(7):after {
     display: inline-block;
     vertical-align: middle;
-    content: 'expand_more';
+    content: 'expand_less';
+    transform: rotate(180deg);
     font-family: 'Material Icons';
     color: #888;
     font-weight: normal;
@@ -666,6 +691,7 @@ footer .footer-line-Left .footerDropList {
 .footer-line-Right button {
     cursor: pointer;
     width: 200px;
+    color: #000;
     background-color: #EEEEEE;
     border-radius: 24px;
     padding: 14px 22px 11px;
@@ -713,9 +739,11 @@ footer .footer-line-Right .footerDropList {
 /* 반응형 */
 
 @media screen and (max-width: 1350px) {
-    footer section, .today-sticky h1,
-    nav, main {
-        width: calc(100% - 80px);
+    footer section, .today-sticky h1, main {
+        width: calc(100% - 30px);
+    }
+    nav {
+        width: calc(100% - 60px);
     }
     main .main-side, main .sub-side {
         width: 50%;
@@ -728,7 +756,7 @@ footer .footer-line-Right .footerDropList {
         height: 230px;
     }
     .section2 article {
-        height: 480px;
+        height: auto;
     }
     .section2 article img {
         width: calc(100% - 150px);
@@ -754,10 +782,10 @@ footer .footer-line-Right .footerDropList {
 
 @media screen and (max-width: 1065px) {
     main .main-side {
-        width: 70%;
+        width: 65%;
     }
     main .sub-side {
-        width: 30%;
+        width: 35%;
         height: 2400px;
     }
     main .sub-side .item {
@@ -771,7 +799,7 @@ footer .footer-line-Right .footerDropList {
     }
     main .today-container {
         margin: 42px 0;
-        transform: scale(0.9);
+        transform: scale(0.85);
     }
 
     /* menu style */
@@ -799,7 +827,7 @@ footer .footer-line-Right .footerDropList {
         height: 100vh;
         top: 0;
         left: 0;
-        transform: translateX(100%);
+        transform: translateX(103%);
         background: #fff;
         z-index: 1;
         overflow: auto;
@@ -817,8 +845,8 @@ footer .footer-line-Right .footerDropList {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        max-width: 412px;
-        height: 100%;
+        max-width: 360px;
+        height: 94%;
     }
     .m-menu-top {
         display: flex;
@@ -927,9 +955,14 @@ main .main-side, main .sub-side {
     display: inline-block;
     width: 80%;
     margin: 18px 0;
+    padding: 45px 43px 0
+}
+.section2 article strong{
+    font-size: 34px;
+    line-height: 39px;
 }
 .section2 article img {
-    width: calc(100% - 40px);
+    width: 100%;
 }
 .section4 article {
     width: 80%;

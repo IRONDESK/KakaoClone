@@ -40,7 +40,11 @@ function scrollEvent () {
 }
 
 function darkMode () {
-    const darkBtn = document.querySelector(".dark-btn");
+    const darkBtn = document.querySelectorAll(".dark-btn");
+    console.log(darkBtn);
+    darkBtn.forEach((v) => {
+        console.log(v);
+    });
     const body = document.querySelector("body");
     const nav = body.querySelector("nav");
     let darkQuery = [
@@ -51,23 +55,25 @@ function darkMode () {
         [body, '.today-container'],
         [body, '.sitemap'],
         [body, '.UseInfoMenu'],
-        [body, '.today-sticky']
+        [body, '.today-sticky'],
+        [body, '.mobile-menu']
     ]
-
-    darkBtn.addEventListener("click", function() {
-        if (!body.classList.contains("dark")) {
-            darkQuery.map((value)=> {
-                value[0].querySelector(value[1]).classList.add("dark");
-            });
-        } else {
-            darkQuery.map((value)=> {
-                value[0].querySelector(value[1]).classList.remove("dark");
-            });
-        }
-    })
+    
+    darkBtn.forEach((v) => {
+        v.addEventListener("click", function() {
+            if (!body.classList.contains("dark")) {
+                darkQuery.map((value)=> {
+                    value[0].querySelector(value[1]).classList.add("dark");
+                });
+            } else {
+                darkQuery.map((value)=> {
+                    value[0].querySelector(value[1]).classList.remove("dark");
+                });
+            }
+        })
+    });
 }
-const dbtn = document.querySelectorAll(".dark-btn");
-console.log(dbtn);
+
 
 
 getDate();
