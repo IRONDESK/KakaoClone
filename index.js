@@ -40,7 +40,7 @@ function scrollEvent () {
 }
 
 function darkMode () {
-    const darkBtn = document.querySelector("#dark-btn");
+    const darkBtn = document.querySelector(".dark-btn");
     const body = document.querySelector("body");
     const nav = body.querySelector("nav");
     let darkQuery = [
@@ -66,7 +66,8 @@ function darkMode () {
         }
     })
 }
-
+const dbtn = document.querySelectorAll(".dark-btn");
+console.log(dbtn);
 
 
 getDate();
