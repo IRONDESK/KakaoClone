@@ -1,38 +1,81 @@
 # KakaoClone
-카카오 회사 페이지(https://www.kakao.com) 클론 프로젝트
+ > 카카오 회사 페이지(https://www.kakao.com) 클론 프로젝트
  * https://irondesk.github.io/KakaoClone/
 
-## 📌 주요사항
-### ✔️ 중점사항
-  1. ``div`` 사용 지양하고 계층화된 태그 사용하기
-  2. 접근성을 고려한 스크린 리더용 텍스트 설명 넣기 (``sr-only``로 보이지 않게)
-### ✔️ 기능사항
-#### Nav
-  1. 로고 - 메뉴 - 아이콘 순으로 정렬
-  2. '뉴스' 제외한 메뉴 클릭시 서브 메뉴 노출 
+## 📌 목적
+### 의도 및 목표
+ * 실제 서비스를 클론하면서, 퍼블리싱 능력과 간단한 JavaScript의 DOM을 학습하고자 하였습니다.
+ * **소스 코드를 보지 않고** 결과물만 보면서 똑같이 구현하는 것을 목표로 하였습니다.
+ * ``div`` 사용 지양하고 계층화된 시맨틱 태그(semantic tag) 사용하기
 
-#### Main
-##### Header
+## 구조
+```js
+📦KakaoClone
+ ┣ 📂img
+ ┣ 📂news
+ ┣ 📜index.html
+ ┣ 📜index.js
+ ┣ 📜README.md
+ ┣ 📜reset.css
+ ┗ 📜style.css
+```
+
+## 📌 요약
+### ✔️ 주요 기능
   1. ``Date()``로 현재 날짜를 호출해 상단에 넣기
   2. 스크롤이 내려가면 상단에 '오늘의 카카오'만 남기고 고정하기
+  3. 다크 모드 구현
+  4. 모바일 디바이스를 고려한 반응형 웹 제작하기
 
-#### News Section
-  1. ``position:flex``로 불규칙한 높이를 가진 뉴스 아이템 나열하기
-  2. 한 면을 차지하는 대형 뉴스 아이템은 스크롤이 끝나는 점까지 ``postion:sticky``로 고정
-  3. 뉴스 아이템 내부 우측 상단의 버튼(...) 클릭 시 공유 버튼 보이기
+#### 스크롤이벤트
+ * ``document``에 srollTop의 좌표가 210px이 넘어갈 때 ``addEventListener``를 적용하였습니다. 
+ * 적용 시엔 별도로 마크업한 ``.today-sticky`` 요소의 클래스에 ``on``을 추가하였습니다.
+```js
+function scrollEvent () {
+    document.addEventListener("scroll", function() {
+        const currentScroll = document.documentElement.scrollTop;
+        const todayCont = document.querySelector(".today-sticky");
+        if (currentScroll > 210) {
+            todayCont.classList.add("on");
+        } else {
+            todayCont.classList.remove("on");
+        }
+    })
+}
+```
 
-#### Footer
-  1. 사이트 개인정보 부분에서 드롭다운 메뉴 만들기
-
-#### 페이지 전체
-##### 다크모드
-  * nav 메뉴 내 다크모트 버튼에 ``addEventListener``를 적용
-  * CSS 내에 다크모드를 위한 스타일이 필요한 부분에 ``dark`` 클래스를 부여하여 마크업
-  * 다크모드 버튼 클릭 시, 해당 클래스에 ``dark``를 ``add``/``remove``하도록 적용
-
-##### 반응형 웹
-  * **미디어쿼리**(``@media``)를 활용하여 반응형 웹 구현
-  * 각 해상도별 화면 구성 변화
-###### 1440px
-###### 1024px
-###### 768px
+#### 다크모드
+ * 다크모드 전환 버튼이 두 개(PC, 모바일)가 있어, 코드 중복을 방지할 방법을 고민했습니다.
+ * ``querySelectorAll``로 NodeList를 받아오고, ``forEach``로 ``addEventListener``를 적용하였습니다.
+```js
+function darkMode () {
+    const darkBtn = document.querySelectorAll(".dark-btn");
+    const body = document.querySelector("body");
+    const nav = body.querySelector("nav");
+    let darkQuery = [
+        [document, 'body'],
+        [body, 'nav'],
+        [nav, '.navLeft'],
+        [nav, '.navRight'],
+        [body, '.today-container'],
+        [body, '.sitemap'],
+        [body, '.UseInfoMenu'],
+        [body, '.today-sticky'],
+        [body, '.mobile-menu']
+    ]
+    
+    darkBtn.forEach((v) => {
+        v.addEventListener("click", function() {
+            if (!body.classList.contains("dark")) {
+                darkQuery.map((value)=> {
+                    value[0].querySelector(value[1]).classList.add("dark");
+                });
+            } else {
+                darkQuery.map((value)=> {
+                    value[0].querySelector(value[1]).classList.remove("dark");
+                });
+            }
+        })
+    });
+}
+```
