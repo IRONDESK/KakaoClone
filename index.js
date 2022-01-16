@@ -41,10 +41,6 @@ function scrollEvent () {
 
 function darkMode () {
     const darkBtn = document.querySelectorAll(".dark-btn");
-    console.log(darkBtn);
-    darkBtn.forEach((v) => {
-        console.log(v);
-    });
     const body = document.querySelector("body");
     const nav = body.querySelector("nav");
     let darkQuery = [
